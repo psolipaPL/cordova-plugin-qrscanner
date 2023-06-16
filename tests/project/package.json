@@ -1,0 +1,29 @@
+{
+  "name": "cordova-plugin-qrscanner-tests",
+  "description": "Cordova tests for the cordova-plugin-qrscanner package",
+  "version": "0.0.1",
+  "scripts": {
+    "clean": "rm -rf node_modules && rm -rf platforms && rm -rf plugins",
+    "postinstall": "node scripts/timestamp.js && cordova prepare",
+    "test:ios": "cordova prepare ios && cordova build ios && open platforms/ios/CvQRScnTst.xcodeproj",
+    "test:browser": "cordova run browser",
+    "test:windows": "cordova run windows --device -- --phone",
+    "test:android": "cordova build android && open -a /Applications/Android\\ Studio.app platforms/android"
+  },
+  "private": true,
+  "dependencies": {
+    "cordova": "^10.0.0",
+    "lodash": "^4.17.21",
+    "replace": "^1.2.0",
+    "cordova-android": "^9.0.0",
+    "cordova-ios": "^6.2.0",
+    "cordova-browser": "^6.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android",
+      "browser"
+    ]
+  }
+}
