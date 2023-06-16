@@ -213,6 +213,14 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
                 });
                 return true;
             }
+            else if (action.equals("configs")) {
+                cordova.getThreadPool().execute(new Runnable() {
+                    public void run() {
+                        configs(args);
+                    }
+                });
+                return true;
+            }
             else {
                 return false;
             }
