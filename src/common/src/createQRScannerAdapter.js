@@ -154,6 +154,9 @@ function doneCallback(callback, clear) {
 }
 
 return {
+  configs: function(){
+    cordova.exec(null, null, 'QRScanner', 'configs', [allowedFormats]);
+  },
   prepare: function(callback) {
     cordova.exec(successCallback(callback), errorCallback(callback), 'QRScanner', 'prepare', []);
   },
